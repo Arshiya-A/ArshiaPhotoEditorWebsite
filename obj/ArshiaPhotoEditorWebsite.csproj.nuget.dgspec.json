@@ -1,0 +1,133 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorWebsite.csproj": {}
+  },
+  "projects": {
+    "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorLibrary\\ArshiaPhotoEditorLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorLibrary\\ArshiaPhotoEditorLibrary.csproj",
+        "projectName": "ArshiaPhotoEditorLibrary",
+        "projectPath": "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorLibrary\\ArshiaPhotoEditorLibrary.csproj",
+        "packagesPath": "C:\\Users\\arshi\\.nuget\\packages\\",
+        "outputPath": "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorLibrary\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\arshi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorWebsite.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorWebsite.csproj",
+        "projectName": "ArshiaPhotoEditorWebsite",
+        "projectPath": "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorWebsite.csproj",
+        "packagesPath": "C:\\Users\\arshi\\.nuget\\packages\\",
+        "outputPath": "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\arshi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorLibrary\\ArshiaPhotoEditorLibrary.csproj": {
+                "projectPath": "D:\\MyProjects\\ArshiaPhotoEditorWebsite\\ArshiaPhotoEditorLibrary\\ArshiaPhotoEditorLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Shyjus.BrowserDetector": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

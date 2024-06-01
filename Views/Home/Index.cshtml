@@ -1,0 +1,149 @@
+﻿@model ArshiaPhotoEditorWebsite.Models.Photo;
+
+@{
+
+    if (Model.ImageName != null)
+    {
+        <div class="col" id="mainSection" style="max-width: 350px;">
+
+            <h3 class="text-dark">Tools : </h3>
+
+            <div class="row">
+                <div class="col m-3">
+                    <button class="button-option" onclick="ChangeOption(0)">Brightness</button>
+                    <button class="button-option" onclick="ChangeOption(1)">Contrast</button>
+                    <button class="button-option" onclick="ChangeOption(2)">ChangeRGB</button>
+                    <button class="button-option" onclick="ChangeOption(3)">Watermark</button>
+                </div>
+
+
+
+                <form asp-action="ApplyChanges" method="post" name="image">
+                    <div class="col m-3" id="optionSection">
+                        <div id="options" hidden>
+                            <label class="text-white">Brightness</label>
+                            <input asp-for="EditorParameters.Brightness" type="range" class="form-range" min="-1" max="1"
+                                value="0" step="0.1">
+                        </div>
+                        <div id="options" hidden>
+                            <label class="text-white">Contrast</label>
+                            <input asp-for="EditorParameters.Contrast" type="range" class="form-range" min="-1" max="2"
+                                value="1" step="0.1">
+                        </div>
+
+                        <div id="options" hidden>
+                            <label class="text-white">R</label>
+                            <input asp-for="EditorParameters.Rcolor" type="range" class="form-range" min="0" max="1" step="0.1"
+                                value="1">
+                            <label class="text-white">G</label>
+                            <input asp-for="EditorParameters.Gcolor" type="range" class="form-range" min="0" max="1" step="0.1"
+                                value="1">
+                            <label class="text-white">B</label>
+                            <input asp-for="EditorParameters.Bcolor" type="range" class="form-range" min="0" max="1" step="0.1"
+                                value="1">
+                        </div>
+
+
+                        <div id="options" hidden>
+                            <label class="text-white">Text</label>
+                            <input asp-for="EditorParameters.WatermarkText" type="text" class="form-control">
+                            <label class="text-white">Size</label>
+                            <input asp-for="EditorParameters.Size" type="range" class="form-range" min="0" max="100" step="1">
+                            <label class="text-white">PositionX</label>
+                            <input asp-for="EditorParameters.PositionX" type="range" class="form-range" min="0" max="2000"
+                                step="1">
+                            <label class="text-white">PositionY</label>
+                            <input asp-for="EditorParameters.PositionY" type="range" class="form-range" min="0" max="2000"
+                                step="1">
+                        </div>
+                        <input type="text" asp-for="ImageName" hidden>
+                        @* <input type="checkbox" asp-for="IsEdit" checked="@Model.IsEdit" hidden> *@
+                        <button type="submit" class="button-option" data-bs-tog gle="modal"
+                            data-bs-target="#myModal">Apply</button>
+                    </div>
+                </form>
+
+
+                <div class="col m-3">
+                    <button class="button-option" data-bs-toggle="modal" data-bs-target="#myModal2">Export</button>
+
+                    <div class="container">
+                        <form asp-action="UploadImage" name="photo" method="post" enctype="multipart/form-data">
+
+                            <label class="text-dark">Choose Image</label>
+                            <input type="file" class="form-control" asp-for="FormFile">
+                            <button class="button-option" type="submit">Upload</button>
+                            @* <input type="checkbox" asp-for="IsEdit" value="false"> *@
+
+                        </form>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    }
+}
+
+<div class="col">
+    @{
+
+
+        if (Model.ImageName != null)
+        {
+            MemoryStream memoryStream = new MemoryStream(Model.ImageLive);
+            <img src="@ViewBag.ImageByte" class="img-fluid
+                                            w-75" />
+
+        }
+
+        else
+        {
+            <div class="container bg-white w-75">
+                <h4 class="text-dark text-center m-3"> For Continue, Choose Image and Press Upload Button </h4>
+                <form asp-action="UploadImage" name="photo" method="post" enctype="multipart/form-data">
+
+                    <input type="file" class="form-control" asp-for="FormFile">
+                    <button class="button-option m-3" type="submit">Upload</button>
+
+                </form>
+            </div>
+        }
+    }
+
+</div>
+
+
+
+
+<div class="modal" id="myModal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+
+
+            <!-- Modal body -->
+            <form asp-action="SaveImage" enctype="multipart/form-data" name="photo">
+
+                <div class="modal-body">
+                    <h4>Image Name : </h4>
+                    <input type="text" name="exportImageName" class="form-control">
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    @* <button type="button" class="button-option" data-bs-dismiss="modal">Cancel</button> *@
+                    <button asp-action="SaveImage" type="submit" class="button-option"
+                        data-bs-dismiss="modal">Save</button>
+                    <input type="hidden" asp-for="ImageName">
+                    <input type="hidden" asp-for="ImageLive">
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>

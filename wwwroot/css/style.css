@@ -1,0 +1,53 @@
+html
+body {
+    background-color: gray;
+}
+
+#mainSection {
+    background-color: gray;
+}
+
+
+
+.button-option {
+    background-color: rgba(0, 0, 0, 0.592);
+    color: white;
+    border-color: black;
+    border-style: solid;
+    width: 100px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+
+.button-option:hover {
+    background-color: rgba(255, 255, 255, 0.592);
+    color: black;
+    border-color: black;
+    border-style: solid;
+    width: 100px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.button-option:focus {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-color: white;
+    border-style: solid;
+    width: 100px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+#optionSection {
+    background-color: rgba(0, 0, 0, 0.371);
+}
+
+
+.modal-content{
+    background-color: gray;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 2px;
+}

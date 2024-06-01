@@ -1,0 +1,23 @@
+@page
+
+@model ArshiaPhotoEditorWebsite.Models.Photo
+@{
+    if (ModelState != null)
+    {
+        <div class="col">
+            <img src="/ImageCaches/@Model.ImageName" alt="imageViewer" class="img-fluid w-75 ">
+        </div>
+    }
+
+    else
+    {
+        <div class="col">
+           <h2>Please Upload Image</h2>
+        </div>
+    }
+
+
+
+
+
+}

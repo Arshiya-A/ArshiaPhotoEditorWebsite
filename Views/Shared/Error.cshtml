@@ -1,0 +1,16 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="row">
+    <h2 class="text-dark">@Model.ErrorName</h2>
+</div>
+
+<div class="row" id="optionSection">
+    <h6 class="text-white m-2">@Model.ErrorDescription</h6>
+    <h6 class="text-white m-2">@Model.Problem</h6>
+    <input type="button" value="Go to home page" class="button-option m-4" style="font-size: 15px; width: 150px;"
+        onclick="location.href ='@Url.Action("Index","Home")'"></input>
+
+</div>

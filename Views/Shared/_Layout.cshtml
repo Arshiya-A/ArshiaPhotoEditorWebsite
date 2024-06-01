@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/bootstrap-grid.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <script src="~/js/changeOption.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap.min.js" asp-append-version="true"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="row" id="mainSection">
+        <h2 class="text-center">Arshia Photo Editor</h2>
+    </div>
+
+
+    <div class="row" id="mainSection">
+
+        @RenderBody()
+
+        @* <div class="col">
+            <img src="/ImageCaches/@ViewBag.ImageName" alt="imageViewer" class="img-fluid w-75 ">
+        </div> *@
+
+    </div>
+
+
+
+    <!-- Button to Open the Modal -->
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h3>SaveChanges is succesfully </h3>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="button-option m-auto" data-bs-dismiss="modal">Ok</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("Scripts", false)
+</body>
+
+</html>
